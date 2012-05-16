@@ -8,14 +8,12 @@ struct stack {
 	int elem[CO_MAX_STACK_ELEM];
 };
 
-void StartStack(stack *q);
-void Enqueue(stack *q, int value);
-int Dequeue(stack *q);
-int CountStack(stack *q);
+void StackStart(stack *q);
+void StackPush(stack *q, int value);
+int StackPop(stack *q);
+int StackCount(stack *q);
 int StackIsEmpty(stack *q);
-void ClearStack(stack *q);
-void SwapStack(stack *q);
-int FirstStackPos(stack *q);
-int LastStackPos(stack *q);
+void StackClear(stack *q);
+int StackTop(stack *q);
 
 #endif

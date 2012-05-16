@@ -18,8 +18,8 @@ void CreateBlocks()
 	int i;
 	for(i = 0; i < CO_NUM_BLOCKS; i++)
 	{
-		StartStack(&blocks[i]);
-		Enqueue(&blocks[i], i);
+		StackStart(&blocks[i]);
+		StackPush(&blocks[i], i);
 	}
 }
 
@@ -33,7 +33,7 @@ void ShowData()
 	{
 		printf("\nbloco %i\n", i);
 
-		for(j = FirstStackPos(&blocks[i]); j >= LastStackPos(&blocks[i]); j--)
+		for(j = StackTop(&blocks[i]); j >= 0; j--)
 		{
 			printf("%i\n", blocks[i].elem[j]);
 		}
@@ -48,18 +48,18 @@ void ShowData()
 void MoveToStack(stack *s_from, stack *s_to)
 {
 	stack s_aux;
-	StartStack(&s_aux);
+	StackStart(&s_aux);
 
 	// Get from stack
 	while(!StackIsEmpty(s_from))
 	{
-		Enqueue(&s_aux, Dequeue(s_from));
+		StackPush(&s_aux, StackPop(s_from));
 	}
 
 	// Get from stack
 	while(!StackIsEmpty(&s_aux))
 	{
-		Enqueue(s_to, Dequeue(&s_aux));
+		StackPush(s_to, StackPop(&s_aux));
 	}
 }
 
@@ -74,27 +74,27 @@ void MoveAbove(int pBlockNumberFrom, int pBlockNumberTo)
 	stack s_tmp;
 	stack s_aux;
 
-	StartStack(&s_aux);
+	StackStart(&s_aux);
 
 	// Get from stack
-	for(i = FirstStackPos(s_to); i >= LastStackPos(s_to); i--)
+	for(i = StackTop(s_to); i >= 0; i--)
 	{
 		if(s_to->elem[i] == pBlockNumberTo) break;
-		Enqueue(&s_aux, Dequeue(s_to));
+		StackPush(&s_aux, StackPop(s_to));
 	}
 
 	// Restore blocks
 	while(!StackIsEmpty(&s_aux))
 	{
-		value = Dequeue(&s_aux);
+		value = StackPop(&s_aux);
 		s_ori = &blocks[value]; // point to block indicated by 'value'
 
 		// ->
 		// -> Copy original block to a temporary stack
 		// ->
-		StartStack(&s_tmp); // Start temporary stack
+		StackStart(&s_tmp); // Start temporary stack
 		MoveToStack(s_ori, &s_tmp); // Move original block to a temporary stack
-		Enqueue(s_ori, value); // Restore original 'value' to its respective block
+		StackPush(s_ori, value); // Restore original 'value' to its respective block
 		MoveToStack(&s_tmp, s_ori); // Restore temporary stack to original stack
 	}
 
