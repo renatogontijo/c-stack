@@ -33,5 +33,13 @@ void StackClear(stack *q) {
 }
 
 int StackTop(stack *q) {
+	return q->elem[q->top];
+}
+
+int StackFirstPos(stack *q) {
 	return q->top;
+}
+
+int StackLastPos(stack *q) {
+	return 0;
 }

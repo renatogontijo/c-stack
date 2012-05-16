@@ -15,5 +15,7 @@ int StackCount(stack *q);
 int StackIsEmpty(stack *q);
 void StackClear(stack *q);
 int StackTop(stack *q);
+int StackFirstPos(stack *q);
+int StackLastPos(stack *q);
 
 #endif

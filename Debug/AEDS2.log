@@ -1,11 +1,16 @@
-﻿Build started 16/5/2012 13:24:12.
-     1>Project "C:\Renato\testes\AEDS2\AEDS2\AEDS2.vcxproj" on node 2 (build target(s)).
-     1>InitializeBuildStatus:
+﻿Build started 16/5/2012 15:52:41.
+     1>Project "C:\Renato\testes\AEDS2\AEDS2\AEDS2.vcxproj" on node 2 (rebuild target(s)).
+     1>_PrepareForClean:
+         Deleting file "Debug\AEDS2.lastbuildstate".
+       InitializeBuildStatus:
          Touching "Debug\AEDS2.unsuccessfulbuild".
        ClCompile:
-         All outputs are up-to-date.
-         c:\Arquivos de programas\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\AEDS2.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt AEDS2.cpp
+         c:\Arquivos de programas\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\AEDS2.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+         c:\Arquivos de programas\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\AEDS2.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt AEDS2.cpp Stack.cpp
+         Stack.cpp
          AEDS2.cpp
+         Generating Code...
        ManifestResourceCompile:
          C:\Arquivos de programas\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\AEDS2.exe.embed.manifest.res" Debug\AEDS2_manifest.rc 
        Link:
@@ -14,6 +19,7 @@
          Debug\Stack.obj
          Debug\stdafx.obj
        Manifest:
+         Deleting file "Debug\AEDS2.exe.embed.manifest".
          C:\Arquivos de programas\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /out:"Debug\AEDS2.exe.embed.manifest" /manifest Debug\AEDS2.exe.intermediate.manifest
          C:\Arquivos de programas\Microsoft SDKs\Windows\v7.0A\bin\rc.exe /nologo /fo"Debug\AEDS2.exe.embed.manifest.res" Debug\AEDS2_manifest.rc 
        LinkEmbedManifest:
@@ -25,8 +31,8 @@
        FinalizeBuildStatus:
          Deleting file "Debug\AEDS2.unsuccessfulbuild".
          Touching "Debug\AEDS2.lastbuildstate".
-     1>Done Building Project "C:\Renato\testes\AEDS2\AEDS2\AEDS2.vcxproj" (build target(s)).
+     1>Done Building Project "C:\Renato\testes\AEDS2\AEDS2\AEDS2.vcxproj" (rebuild target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.67
+Time Elapsed 00:00:01.76

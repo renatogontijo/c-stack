@@ -1,10 +1,11 @@
 // AEDS2.cpp : Defines the entry point for the console application.
 //
 
-#include <stdio.h>
-
 #include "stdafx.h"
 #include "Stack.h"
+
+#include <stdio.h>
+#include <stdlib.h>
 
 #define CO_NUM_BLOCKS 5
 
@@ -33,7 +34,7 @@ void ShowData()
 	{
 		printf("\nbloco %i\n", i);
 
-		for(j = StackTop(&blocks[i]); j >= 0; j--)
+		for(j = StackFirstPos(&blocks[i]); j >= StackLastPos(&blocks[i]); j--)
 		{
 			printf("%i\n", blocks[i].elem[j]);
 		}
@@ -77,7 +78,7 @@ void MoveAbove(int pBlockNumberFrom, int pBlockNumberTo)
 	StackStart(&s_aux);
 
 	// Get from stack
-	for(i = StackTop(s_to); i >= 0; i--)
+	for(i = StackFirstPos(s_to); i >= StackLastPos(s_to); i--)
 	{
 		if(s_to->elem[i] == pBlockNumberTo) break;
 		StackPush(&s_aux, StackPop(s_to));
@@ -108,6 +109,11 @@ void MoveToTop(int pBlockNumberFrom, int pBlockNumberTo)
 	stack *s_to = &blocks[pBlockNumberTo];
 	MoveToStack(s_from, s_to);
 }
+
+struct stTeste {
+	int val;
+	struct stTeste *next;
+};
 
 int _tmain(int argc, _TCHAR* argv[])
 {
